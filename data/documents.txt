@@ -1,0 +1,12 @@
+Machine learning is a subset of artificial intelligence focused on learning patterns from data.
+Deep learning uses multi-layer neural networks to learn complex patterns.
+Embeddings convert text into dense numerical vectors that capture semantic meaning.
+FAISS is a library for efficient similarity search over high-dimensional vectors.
+Transformers are neural network architectures widely used in modern language models.
+Vector databases store embeddings and support semantic retrieval.
+Cosine similarity measures how similar two vectors are in direction.
+Agentic AI systems can plan, reason, and use tools to complete tasks.
+FastAPI is a Python framework commonly used to build APIs for AI systems.
+Retrieval-Augmented Generation combines document retrieval with language model generation.
+Large language models are trained on massive text corpora to generate human-like responses.
+Semantic search retrieves information based on meaning instead of exact keyword matches.
