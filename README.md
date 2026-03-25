@@ -2,60 +2,64 @@
 
 This project is my attempt to understand how semantic search works behind the scenes.
 
-Instead of just matching keywords, this system tries to find results based on meaning using vector similarity.
+Instead of relying only on exact keyword matching, this system tries to understand the meaning of the query and return more relevant results using vector similarity.
 
 ---
 
-## What I Built
+## What this project does
 
-- A local semantic search system  
-- Converts text into vectors (custom embedding logic)  
-- Uses FAISS for fast similarity search  
-- Takes user queries and returns the most relevant results  
+- Reads text data from a local file
+- Converts each text entry into a vector representation
+- Stores those vectors using FAISS
+- Takes a user query as input
+- Returns the most relevant matches based on similarity
 
 ---
 
 ## Progress
 
 ### Day 1
-- Built the base system  
-- Learned how tokenization works  
-- Created a simple embedding approach using hashing  
-- Integrated FAISS to store and search vectors  
+
+- Set up the project structure
+- Learned how virtual environments work
+- Built the first version of the semantic search system
+- Used FAISS for similarity search
+- Tested the system with sample AI/ML-related queries
 
 ### Day 2
-- Made the system interactive (can ask multiple questions)  
-- Cleaned up and structured the code better  
-- Added `.env` for configuration  
-- Improved output formatting  
+
+- Improved the project structure
+- Added `.env` for configuration
+- Made the system interactive so multiple queries can be asked in one run
+- Cleaned up the code into smaller functions
+- Uploaded the project to GitHub
 
 ---
 
-## How It Works (Simple)
+## How it works
 
-1. Read text data from a file  
-2. Convert each line into a vector  
-3. Store vectors in FAISS  
-4. Take user input  
-5. Find closest matching vectors  
-6. Show the results  
+1. The system loads documents from `data/documents.txt`
+2. Each line is converted into a vector using a custom embedding approach
+3. All vectors are stored in a FAISS index
+4. When the user asks a question, the query is also converted into a vector
+5. FAISS finds the closest matching vectors
+6. The system displays the top relevant results
 
----
+## How to run
 
-## Example
-
-Input:
-What are transformers?
-
-Output:
-Transformers are neural network architectures widely used in modern language models.
-
----
-
-## How to Run
-
-```bash
-python -m venv venv
-venv\Scripts\activate
+# bash
 pip install -r requirements.txt
 python main.py
+
+## Project structure
+
+```text
+autoresearch-ai/
+│
+├── data/
+│   └── documents.txt
+├── main.py
+├── requirements.txt
+├── README.md
+├── .env
+└── .gitignore
