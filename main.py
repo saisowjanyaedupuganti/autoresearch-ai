@@ -81,14 +81,17 @@ def search_documents(index, documents, query, top_k):
 
 
 def display_results(results):
-    print("\nTop Matches:")
-    print("-" * 60)
+    print("\n" + "="*50)
+    print(f" Top {len(results)} Matches for your query")
+    print("="*50)
 
     for item in results:
-        print(f"Rank  : {item['rank']}")
+        print(f"\nResult {item['rank']}")
+        print("-"*30)
         print(f"Score : {item['score']:.4f}")
         print(f"Text  : {item['document']}")
-        print("-" * 60)
+
+    print("\n" + "="*50)
 
 
 def main():
