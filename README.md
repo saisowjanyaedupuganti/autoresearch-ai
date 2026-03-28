@@ -35,6 +35,11 @@ Instead of relying only on exact keyword matching, this system tries to understa
 - Uploaded the project to GitHub
 
 ---
+### Day 4
+- Added final answer generation using retrieved results
+- Combined top search results into a single response
+- Improved output structure with a clear "Final Answer" section
+- Moved from basic search → retrieval + response system
 
 ## How it works
 
