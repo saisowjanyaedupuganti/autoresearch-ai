@@ -1,12 +1,63 @@
 Machine learning is a subset of artificial intelligence focused on learning patterns from data.
-Deep learning uses multi-layer neural networks to learn complex patterns.
+Deep learning uses multi-layer neural networks to learn complex patterns from large datasets.
+
+Natural language processing focuses on enabling computers to understand and generate human language.
+Tokenization is the process of breaking text into smaller units such as words or subwords.
+Stop words are common words like "the" and "is" that are sometimes removed during preprocessing.
+Stemming reduces words to their root form, while lemmatization converts words to their dictionary form.
+
 Embeddings convert text into dense numerical vectors that capture semantic meaning.
-FAISS is a library for efficient similarity search over high-dimensional vectors.
-Transformers are neural network architectures widely used in modern language models.
-Vector databases store embeddings and support semantic retrieval.
-Cosine similarity measures how similar two vectors are in direction.
-Agentic AI systems can plan, reason, and use tools to complete tasks.
-FastAPI is a Python framework commonly used to build APIs for AI systems.
-Retrieval-Augmented Generation combines document retrieval with language model generation.
-Large language models are trained on massive text corpora to generate human-like responses.
+Sentence embeddings represent the meaning of entire sentences in vector form.
+Vector embeddings allow machines to compare text based on meaning instead of exact words.
+
 Semantic search retrieves information based on meaning instead of exact keyword matches.
+Keyword search depends on exact or partial word matching.
+Dense retrieval uses embeddings, while sparse retrieval uses keyword-based scoring methods like BM25.
+
+FAISS is a library for efficient similarity search over high-dimensional vectors.
+Vector databases store embeddings and support fast similarity search.
+Nearest neighbor search identifies the closest vectors to a given query vector.
+
+Cosine similarity measures how similar two vectors are in direction.
+Euclidean distance measures how far apart two vectors are in space.
+Similarity search helps find relevant documents based on vector closeness.
+
+Transformers are neural network architectures widely used in modern language models.
+Transformers use self-attention mechanisms to process input data efficiently.
+Attention mechanisms help models focus on important parts of input data.
+
+BERT is a transformer-based model designed for understanding context in text.
+GPT is a transformer-based model designed for generating human-like text.
+Large language models are trained on massive datasets to understand and generate language.
+
+Prompt engineering is the process of designing inputs to guide language model outputs.
+Temperature controls randomness in generated responses.
+Lower temperature produces more deterministic outputs, while higher values increase creativity.
+
+Retrieval-Augmented Generation (RAG) combines document retrieval with language model generation.
+RAG systems retrieve relevant documents and use them as context for generating answers.
+RAG improves answer quality by grounding responses in real data.
+
+Chunking splits large documents into smaller pieces for better retrieval.
+Good chunking improves retrieval accuracy in semantic search systems.
+Context plays a critical role in improving answer generation.
+
+Hallucination occurs when a language model generates incorrect or unsupported information.
+Providing retrieved context helps reduce hallucination in AI systems.
+Grounded generation ensures answers are based on factual data.
+
+Knowledge bases store structured or unstructured information for retrieval systems.
+Document retrieval is a key component in modern AI-powered search engines.
+Top-k retrieval returns the most relevant results for a query.
+
+Precision measures how many retrieved results are relevant.
+Recall measures how many relevant results are successfully retrieved.
+Evaluation helps improve system performance.
+
+FastAPI is a Python framework used to build APIs for AI systems.
+Streamlit is used to build simple user interfaces for AI applications.
+Model deployment involves making AI systems available for real-world usage.
+
+AI systems combine data, algorithms, and computation to perform intelligent tasks.
+Agentic AI systems can plan, reason, and use tools to complete tasks.
+Modern AI applications integrate retrieval, reasoning, and generation into a single pipeline.
