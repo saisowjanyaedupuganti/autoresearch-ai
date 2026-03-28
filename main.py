@@ -79,20 +79,39 @@ def search_documents(index, documents, query, top_k):
 
     return results
 
+def generate_final_answer(query, results):
+    if not results:
+        return "No relevant information found for the given query."
 
-def display_results(results):
-    print("\n" + "="*50)
-    print(f" Top {len(results)} Matches for your query")
-    print("="*50)
+    combined_text = " ".join([item["document"] for item in results])
+
+    answer = (
+        f"Based on the retrieved information, here is a concise answer to your question:\n"
+        f"{combined_text}"
+    )
+
+    return answer
+
+
+def display_results(query, results):
+    final_answer = generate_final_answer(query, results)
+
+    print("\n" + "=" * 60)
+    print("Final Answer")
+    print("=" * 60)
+    print(final_answer)
+
+    print("\n" + "=" * 60)
+    print(f"Top {len(results)} Matches for your query")
+    print("=" * 60)
 
     for item in results:
         print(f"\nResult {item['rank']}")
-        print("-"*30)
+        print("-" * 30)
         print(f"Score : {item['score']:.4f}")
         print(f"Text  : {item['document']}")
 
-    print("\n" + "="*50)
-
+    print("\n" + "=" * 60)
 
 def main():
     print(f"\n{PROJECT_NAME} - Semantic Search System")
@@ -116,7 +135,7 @@ def main():
             continue
 
         results = search_documents(index, documents, query, TOP_K)
-        display_results(results)
+        display_results(query, results)
 
 
 if __name__ == "__main__":
