@@ -35,7 +35,7 @@ def load_documents(file_path: Path) -> List[str]:
 
 
 def tokenize(text: str) -> List[str]:
-    return re.findall(r"[a-zA-Z0-9]+", text.lower())
+    return re.findall(r"[a-zA-Z0-9]+", str(text).lower())
 
 
 def token_to_vector(token: str, dim: int = EMBED_DIM) -> np.ndarray:
