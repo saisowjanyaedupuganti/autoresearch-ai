@@ -1,70 +1,154 @@
-# AutoResearch AI 🚀
+AutoResearch AI
+🧠 From Simple Search → Intelligent AI System
 
-This project is my attempt to understand how semantic search works behind the scenes.
+When I started this project, my goal was simple:
+👉 build a basic search system that can find relevant information.
 
-Instead of relying only on exact keyword matching, this system tries to understand the meaning of the query and return more relevant results using vector similarity.
+But as I progressed, I realized something important:
 
----
+Retrieval alone is not intelligence.
 
-## What this project does
+So I pushed this project step by step — and by Day 5, it evolved into a system that can:
 
-- Reads text data from a local file
-- Converts each text entry into a vector representation
-- Stores those vectors using FAISS
-- Takes a user query as input
-- Returns the most relevant matches based on similarity
+✔ understand
+✔ filter
+✔ generate meaningful answers
 
----
+📌 Project Overview
 
-## Progress
+AutoResearch AI is a semantic search + RAG (Retrieval-Augmented Generation) system that takes natural language queries and returns context-aware answers, instead of just showing raw text.
 
-### Day 1
+It simulates how modern AI systems like ChatGPT combine:
 
-- Set up the project structure
-- Learned how virtual environments work
-- Built the first version of the semantic search system
-- Used FAISS for similarity search
-- Tested the system with sample AI/ML-related queries
+retrieval (finding relevant info)
+generation (producing answers)
+🛤️ My Learning Journey (Day 1 → Day 5)
+🔹 Day 1 – Basic Setup
+Set up Python project structure
+Created document dataset (documents.txt)
+Built simple file-based data loading
 
-### Day 2
+👉 At this stage, it was just reading text.
 
-- Improved the project structure
-- Added `.env` for configuration
-- Made the system interactive so multiple queries can be asked in one run
-- Cleaned up the code into smaller functions
-- Uploaded the project to GitHub
+🔹 Day 2 – Text Processing
+Implemented tokenization
+Converted text into structured format
+Started thinking in terms of "data → representation"
 
----
-### Day 4
-- Added final answer generation using retrieved results
-- Combined top search results into a single response
-- Improved output structure with a clear "Final Answer" section
-- Moved from basic search → retrieval + response system
+👉 Learned how raw text becomes usable data.
 
-## How it works
+🔹 Day 3 – Embeddings & Vectorization
+Built custom embedding function using hashing
+Converted text into numerical vectors
+Normalized embeddings
 
-1. The system loads documents from `data/documents.txt`
-2. Each line is converted into a vector using a custom embedding approach
-3. All vectors are stored in a FAISS index
-4. When the user asks a question, the query is also converted into a vector
-5. FAISS finds the closest matching vectors
-6. The system displays the top relevant results
+👉 This is where the system started understanding meaning instead of keywords
 
-## How to run
+🔹 Day 4 – Semantic Search with FAISS
+Integrated FAISS for fast similarity search
+Implemented vector indexing
+Retrieved Top-K relevant documents
 
-# bash
+👉 Now the system could search based on meaning, not exact words.
+
+🔹 Day 5 – RAG (Retrieval + Generation)
+
+This was the biggest shift.
+
+Instead of just retrieving results:
+
+I combined retrieval with an LLM
+Built a context-aware answer generation system
+
+👉 Now the system:
+
+filters noise
+focuses on relevant context
+generates clean, human-like answers
+
+⚙️ How the System Works
+User Query
+   ↓
+Tokenization
+   ↓
+Embedding Generation
+   ↓
+FAISS Similarity Search
+   ↓
+Top-K Relevant Documents
+   ↓
+LLM (OpenAI)
+   ↓
+Final Answer (Context-aware)
+
+🔍 Example
+
+Question:
+
+What are transformers?
+
+Output:
+
+Transformers are neural network architectures widely used in modern language models.
+
+🔥 Key Features
+Semantic search using vector embeddings
+FAISS-based fast similarity search
+Retrieval-Augmented Generation (RAG) pipeline
+Context-aware answer generation
+Noise filtering and relevance selection
+Modular pipeline design
+
+🧠 Concepts I Worked With
+Vector Embeddings
+Cosine Similarity
+FAISS Indexing
+Retrieval-Augmented Generation (RAG)
+Prompt Engineering
+Natural Language Processing (NLP)
+
+🛠️ Tech Stack
+Python
+FAISS
+NumPy
+OpenAI API
+dotenv
+💡 What I Learned
+This project completely changed how I think about AI systems.
+
+I understood that:
+
+👉 Search systems retrieve data
+👉 AI systems understand + filter + generate
+And the real power comes from combining all three.
+
+🚀 Future Improvements
+Improve retrieval quality with better embeddings
+Add UI (Streamlit or web app)
+Optimize performance for larger datasets
+Introduce caching and ranking improvements
+
+👩‍💻 About Me
+I am actively learning and building projects in:
+AI Engineering
+Machine Learning
+NLP
+
+This project is part of my journey to build real-world AI systems.
+
+⭐ Final Thought
+Understanding + Filtering + Generating
+is where real AI begins.
+
+🚀 Run Locally
 pip install -r requirements.txt
 python main.py
 
-## Project structure
+🔐 Environment Setup
+Create a .env file:
+OPENAI_API_KEY=your_api_key_here
 
-```text
-autoresearch-ai/
-│
-├── data/
-│   └── documents.txt
-├── main.py
-├── requirements.txt
-├── README.md
-├── .env
-└── .gitignore
+
+🧑‍💻 Author
+
+Sai Sowjanya Edupuganti
