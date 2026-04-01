@@ -7,12 +7,15 @@ from typing import List
 import faiss
 import numpy as np
 from dotenv import load_dotenv
+from openai import OpenAI
+
 
 
 load_dotenv()
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 PROJECT_NAME = os.getenv("PROJECT_NAME", "AutoResearch AI")
-TOP_K = int(os.getenv("TOP_K", 3))
+TOP_K = int(os.getenv("TOP_K", 1))
 
 DATA_FILE = Path("data/documents.txt")
 EMBED_DIM = 64
@@ -83,14 +86,35 @@ def generate_final_answer(query, results):
     if not results:
         return "No relevant information found for the given query."
 
-    combined_text = " ".join([item["document"] for item in results])
+    context = "\n".join([item["document"] for item in results])
 
-    answer = (
-        f"Based on the retrieved information, here is a concise answer to your question:\n"
-        f"{combined_text}"
+    prompt = f"""
+You are an AI assistant.
+
+Answer the question ONLY using relevant information.
+
+Question:
+{query}
+
+Context:
+{context}
+
+Instructions:
+- Ignore unrelated information
+- Give a clear and concise answer
+- Do not include irrelevant sentences
+
+Answer:
+"""
+
+    response = client.chat.completions.create(
+        model="gpt-4.1-mini",
+        messages=[{"role": "user", "content": prompt}],
+        temperature=0.2
     )
 
-    return answer
+    return response.choices[0].message.content
+
 
 
 def display_results(query, results):
