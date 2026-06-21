@@ -1,60 +1,72 @@
 # 🚀 AutoResearch AI
 
-### Semantic Search + Retrieval-Augmented Generation (RAG) Answering System
+> An AI-powered document question-answering system that combines Semantic Search, Vector Embeddings, FAISS, and Retrieval-Augmented Generation (RAG) to generate accurate, context-aware answers.
 
-AutoResearch AI is an intelligent document question-answering system that combines **Semantic Search**, **Vector Embeddings**, **FAISS**, and **Large Language Models (LLMs)** to generate accurate, context-aware answers.
-
-Unlike traditional keyword-based search engines, AutoResearch AI understands the semantic meaning of user queries, retrieves the most relevant documents, and generates reliable responses using Retrieval-Augmented Generation (RAG).
-
----
-
-# 📖 Overview
-
-This project demonstrates the implementation of a modern AI-powered information retrieval system capable of:
-
-- Understanding natural language questions
-- Performing semantic similarity search
-- Retrieving the most relevant documents
-- Reducing hallucinations using Retrieval-Augmented Generation (RAG)
-- Generating accurate, context-aware responses using OpenAI models
+![Python](https://img.shields.io/badge/Python-3.10-blue?logo=python)
+![OpenAI](https://img.shields.io/badge/OpenAI-API-green)
+![FAISS](https://img.shields.io/badge/FAISS-Vector%20Search-orange)
+![RAG](https://img.shields.io/badge/RAG-LLM-purple)
+![License](https://img.shields.io/badge/License-MIT-lightgrey)
 
 ---
 
-# ✨ Features
+# 📖 About the Project
 
-- 🔍 Semantic Search using Vector Embeddings
-- ⚡ High-speed similarity search with FAISS
+Large Language Models are powerful, but they can generate inaccurate information when they lack relevant context.
+
+I built **AutoResearch AI** to explore how **Retrieval-Augmented Generation (RAG)** improves answer quality by retrieving relevant documents before generating a response.
+
+Instead of relying only on the model's internal knowledge, the system searches a vector database using semantic similarity, retrieves the most relevant information, and supplies that context to the LLM.
+
+The result is more reliable and context-aware responses while significantly reducing hallucinations.
+
+---
+
+# 🎯 Project Goals
+
+- Build a practical Retrieval-Augmented Generation (RAG) pipeline
+- Understand semantic search using vector embeddings
+- Implement efficient document retrieval using FAISS
+- Improve answer quality by grounding LLM responses
+- Learn how modern AI applications integrate retrieval with generation
+
+---
+
+# ✨ Key Features
+
+- 🔍 Semantic document search
 - 🧠 Retrieval-Augmented Generation (RAG)
-- 🤖 Context-aware answer generation using OpenAI API
-- 📄 Top-K document retrieval
-- 🎯 Reduced hallucinations through grounded responses
-- 📚 Modular AI pipeline
-- 🚀 Fast and scalable architecture
+- ⚡ High-speed FAISS vector indexing
+- 🤖 OpenAI-powered answer generation
+- 📄 Top-K relevant document retrieval
+- 📚 Context-aware responses
+- 🚀 Modular architecture
+- 🔄 Easily extendable for larger knowledge bases
 
 ---
 
-# 🏗 System Architecture
+# 🏗 Architecture
 
 ```
-                User Query
-                     │
-                     ▼
-         Text Embedding Generation
-                     │
-                     ▼
-          FAISS Vector Database
-                     │
-                     ▼
-        Retrieve Top-K Documents
-                     │
-                     ▼
-        Build Context for the LLM
-                     │
-                     ▼
-          OpenAI GPT Generation
-                     │
-                     ▼
-        Context-Aware Final Answer
+                 User Question
+                       │
+                       ▼
+              Generate Embeddings
+                       │
+                       ▼
+               FAISS Vector Index
+                       │
+                       ▼
+          Retrieve Top-K Documents
+                       │
+                       ▼
+           Build Context Prompt
+                       │
+                       ▼
+               OpenAI GPT Model
+                       │
+                       ▼
+          Context-Aware Response
 ```
 
 ---
@@ -63,9 +75,9 @@ This project demonstrates the implementation of a modern AI-powered information 
 
 ### Step 1
 
-The user submits a natural language question.
+The user asks a question.
 
-Example:
+Example
 
 ```
 What are Transformers?
@@ -75,115 +87,112 @@ What are Transformers?
 
 ### Step 2
 
-The query is converted into dense vector embeddings.
+The question is converted into vector embeddings.
 
 ---
 
 ### Step 3
 
-FAISS performs similarity search over all indexed documents.
+FAISS searches the vector database to identify the most semantically similar documents.
 
 ---
 
 ### Step 4
 
-The most relevant documents are retrieved.
+The Top-K most relevant document chunks are retrieved.
 
 ---
 
 ### Step 5
 
-The retrieved context is passed to the Large Language Model.
+The retrieved context is combined with the user's question.
 
 ---
 
 ### Step 6
 
-The model generates a context-aware answer.
+The OpenAI model generates an answer using the retrieved context.
 
 ---
 
-# 💡 Example
+# 💻 Technologies Used
 
-### User Question
+## Programming
 
-```
-What are Transformers?
-```
+- Python
 
-### Generated Answer
+## AI & NLP
 
-```
-Transformers are deep learning architectures that use self-attention mechanisms to efficiently process sequential data. They are widely used in modern Natural Language Processing models such as GPT, BERT, and T5.
-```
-
----
-
-# 🛠 Tech Stack
-
-| Category | Technologies |
-|-----------|--------------|
-| Programming Language | Python |
-| AI | OpenAI API |
-| Retrieval | FAISS |
-| Embeddings | OpenAI Embeddings |
-| NLP | Retrieval-Augmented Generation (RAG) |
-| Data Processing | NumPy |
-| Environment | python-dotenv |
-
----
-
-# 🧠 AI Concepts Used
-
+- OpenAI API
 - Retrieval-Augmented Generation (RAG)
-- Semantic Search
-- Vector Embeddings
-- Similarity Search
-- FAISS Indexing
 - Prompt Engineering
-- Natural Language Processing
-- Large Language Models (LLMs)
+- Semantic Search
+
+## Vector Database
+
+- FAISS
+
+## Libraries
+
+- NumPy
+- python-dotenv
 
 ---
 
-# 📂 Project Structure
+# 🧠 Engineering Decisions
+
+During development I focused on several important design decisions:
+
+- Choosing semantic search instead of keyword matching.
+- Using vector embeddings to improve retrieval accuracy.
+- Retrieving only the Top-K most relevant documents to reduce unnecessary context.
+- Keeping retrieval and generation as separate modules to improve maintainability.
+- Building a modular pipeline that can easily support different embedding models and LLMs.
+
+---
+
+# 📊 Project Highlights
+
+- Built an end-to-end Retrieval-Augmented Generation pipeline.
+- Implemented semantic search using FAISS vector indexing.
+- Improved answer quality through retrieval-based context injection.
+- Reduced hallucinations by grounding responses with retrieved documents.
+- Designed a modular architecture for future scalability.
+
+---
+
+# 📂 Repository Structure
 
 ```
-AutoResearch-AI/
-│
+autoresearch-ai/
+
 ├── data/
 │   └── documents.txt
 │
-├── src/
-│   ├── embeddings.py
-│   ├── vector_store.py
-│   ├── retriever.py
-│   ├── rag_pipeline.py
-│   └── main.py
-│
+├── app.py
+├── main.py
 ├── requirements.txt
-├── .env
 ├── README.md
-└── LICENSE
+└── .gitignore
 ```
 
 ---
 
-# 🚀 Installation
+# 🚀 Getting Started
 
-## Clone the Repository
+## Clone the repository
 
 ```bash
 git clone https://github.com/saisowjanyaedupuganti/autoresearch-ai.git
 ```
 
-```
+```bash
 cd autoresearch-ai
 ```
 
 ---
 
-## Install Dependencies
+## Install dependencies
 
 ```bash
 pip install -r requirements.txt
@@ -191,63 +200,59 @@ pip install -r requirements.txt
 
 ---
 
-## Configure Environment Variables
+## Configure API Key
 
 Create a `.env` file.
 
-```env
-OPENAI_API_KEY=your_openai_api_key
+```
+OPENAI_API_KEY=your_api_key_here
 ```
 
 ---
 
-## Run the Application
+## Run the application
 
 ```bash
-python src/main.py
+python main.py
+```
+
+or
+
+```bash
+python app.py
 ```
 
 ---
 
-# 📊 Performance Highlights
+# 📈 Future Improvements
 
-- ✅ Reduced response latency through efficient FAISS indexing
-- ✅ Improved answer relevance using semantic retrieval
-- ✅ Reduced hallucinations with Retrieval-Augmented Generation
-- ✅ Context-aware response generation using OpenAI GPT models
-- ✅ Scalable retrieval pipeline for large document collections
+I plan to extend this project by adding:
 
----
-
-# 🎯 Future Improvements
-
-- Streamlit Web Interface
-- FastAPI REST API
-- PDF Document Upload
-- Multi-file Knowledge Base
-- Hybrid Search (BM25 + Vector Search)
-- Conversation Memory
-- Docker Deployment
-- AWS Cloud Deployment
-- User Authentication
-- CI/CD using GitHub Actions
+- Streamlit user interface
+- FastAPI backend
+- PDF document ingestion
+- Multiple document collections
+- Conversation memory
+- Docker support
+- AWS deployment
+- Authentication
+- CI/CD with GitHub Actions
 
 ---
 
-# 📚 Learning Outcomes
+# 📚 What I Learned
 
-This project demonstrates practical experience with:
+This project strengthened my understanding of:
 
-- Large Language Models
 - Retrieval-Augmented Generation
+- Large Language Models
 - Semantic Search
 - Vector Databases
 - FAISS
 - Prompt Engineering
-- AI System Design
+- Backend AI application development
 - Information Retrieval
-- Backend Development
-- Python Software Engineering
+- Python software engineering
 
 ---
 
@@ -255,7 +260,7 @@ This project demonstrates practical experience with:
 
 ## Sai Sowjanya Edupuganti
 
-**Master of Science in Computer Science**
+Master of Science in Computer Science
 
 University of North Texas
 
@@ -268,14 +273,8 @@ University of North Texas
 
 ---
 
-# ⭐ If you found this project useful
+# ⭐ Support
 
-Please consider giving this repository a ⭐ on GitHub.
+If you found this project interesting, consider giving it a ⭐.
 
-It motivates me to continue building AI-powered software projects and sharing them with the developer community.
-
----
-
-## License
-
-This project is available for educational and research purposes.
+Feedback and suggestions are always welcome.
