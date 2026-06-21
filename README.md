@@ -1,95 +1,281 @@
-🚀 AutoResearch AI
-🧠 Semantic Search + RAG-based Answer Generation System
-📌 Overview
+# 🚀 AutoResearch AI
 
-AutoResearch AI is an intelligent system that goes beyond traditional search.
+### Semantic Search + Retrieval-Augmented Generation (RAG) Answering System
 
-Instead of just retrieving text, it:
+AutoResearch AI is an intelligent document question-answering system that combines **Semantic Search**, **Vector Embeddings**, **FAISS**, and **Large Language Models (LLMs)** to generate accurate, context-aware answers.
 
-understands user queries
-retrieves relevant information
-generates clean, context-aware answers
+Unlike traditional keyword-based search engines, AutoResearch AI understands the semantic meaning of user queries, retrieves the most relevant documents, and generates reliable responses using Retrieval-Augmented Generation (RAG).
 
-This project demonstrates how modern AI systems combine retrieval + generation to build intelligent applications.
-⚡ Features
-🔍 Semantic search using vector embeddings
-⚡ Fast similarity search with FAISS
-🧠 Retrieval-Augmented Generation (RAG)
-💬 Context-aware answer generation using LLM
-🎯 Filters irrelevant information
-🧩 Modular pipeline design
+---
 
+# 📖 Overview
 
-🏗️ System Architecture
-User Query
-   ↓
-Embedding Generation
-   ↓
-FAISS Similarity Search
-   ↓
-Top-K Relevant Documents
-   ↓
-LLM (OpenAI)
-   ↓
-Final Answer (Context-aware)
+This project demonstrates the implementation of a modern AI-powered information retrieval system capable of:
 
+- Understanding natural language questions
+- Performing semantic similarity search
+- Retrieving the most relevant documents
+- Reducing hallucinations using Retrieval-Augmented Generation (RAG)
+- Generating accurate, context-aware responses using OpenAI models
 
-🔄 How It Works
-User enters a natural language query
-Query is converted into vector embeddings
-FAISS retrieves the most relevant documents
-Retrieved context is passed to the LLM
-System generates a concise, human-like answer
+---
 
+# ✨ Features
 
-🔍 Example
+- 🔍 Semantic Search using Vector Embeddings
+- ⚡ High-speed similarity search with FAISS
+- 🧠 Retrieval-Augmented Generation (RAG)
+- 🤖 Context-aware answer generation using OpenAI API
+- 📄 Top-K document retrieval
+- 🎯 Reduced hallucinations through grounded responses
+- 📚 Modular AI pipeline
+- 🚀 Fast and scalable architecture
 
-Question:
-What are transformers?
-Answer:
-Transformers are neural network architectures widely used in modern language models.
+---
 
-🧠 Key Concepts
-Vector Embeddings
-Cosine Similarity
-FAISS Indexing
-Retrieval-Augmented Generation (RAG)
-Prompt Engineering
-Natural Language Processing (NLP)
+# 🏗 System Architecture
 
-🛠️ Tech Stack
-Python
-FAISS
-NumPy
-OpenAI API
-dotenv
+```
+                User Query
+                     │
+                     ▼
+         Text Embedding Generation
+                     │
+                     ▼
+          FAISS Vector Database
+                     │
+                     ▼
+        Retrieve Top-K Documents
+                     │
+                     ▼
+        Build Context for the LLM
+                     │
+                     ▼
+          OpenAI GPT Generation
+                     │
+                     ▼
+        Context-Aware Final Answer
+```
 
+---
 
-📁 Project Structure
-autoresearch-ai/
-│── data/
+# ⚙️ How It Works
+
+### Step 1
+
+The user submits a natural language question.
+
+Example:
+
+```
+What are Transformers?
+```
+
+---
+
+### Step 2
+
+The query is converted into dense vector embeddings.
+
+---
+
+### Step 3
+
+FAISS performs similarity search over all indexed documents.
+
+---
+
+### Step 4
+
+The most relevant documents are retrieved.
+
+---
+
+### Step 5
+
+The retrieved context is passed to the Large Language Model.
+
+---
+
+### Step 6
+
+The model generates a context-aware answer.
+
+---
+
+# 💡 Example
+
+### User Question
+
+```
+What are Transformers?
+```
+
+### Generated Answer
+
+```
+Transformers are deep learning architectures that use self-attention mechanisms to efficiently process sequential data. They are widely used in modern Natural Language Processing models such as GPT, BERT, and T5.
+```
+
+---
+
+# 🛠 Tech Stack
+
+| Category | Technologies |
+|-----------|--------------|
+| Programming Language | Python |
+| AI | OpenAI API |
+| Retrieval | FAISS |
+| Embeddings | OpenAI Embeddings |
+| NLP | Retrieval-Augmented Generation (RAG) |
+| Data Processing | NumPy |
+| Environment | python-dotenv |
+
+---
+
+# 🧠 AI Concepts Used
+
+- Retrieval-Augmented Generation (RAG)
+- Semantic Search
+- Vector Embeddings
+- Similarity Search
+- FAISS Indexing
+- Prompt Engineering
+- Natural Language Processing
+- Large Language Models (LLMs)
+
+---
+
+# 📂 Project Structure
+
+```
+AutoResearch-AI/
+│
+├── data/
 │   └── documents.txt
-│── main.py
-│── requirements.txt
-│── README.md
-│── .env (not pushed)
-│── .gitignore
+│
+├── src/
+│   ├── embeddings.py
+│   ├── vector_store.py
+│   ├── retriever.py
+│   ├── rag_pipeline.py
+│   └── main.py
+│
+├── requirements.txt
+├── .env
+├── README.md
+└── LICENSE
+```
 
+---
 
-▶️ Run the Project
+# 🚀 Installation
+
+## Clone the Repository
+
+```bash
+git clone https://github.com/saisowjanyaedupuganti/autoresearch-ai.git
+```
+
+```
+cd autoresearch-ai
+```
+
+---
+
+## Install Dependencies
+
+```bash
 pip install -r requirements.txt
-python main.py
+```
 
+---
 
-🔐 Environment Setup
-Create a .env file:
+## Configure Environment Variables
 
-OPENAI_API_KEY=your_api_key_here
-🚀 Future Improvements
-Improve retrieval accuracy
-Add UI (Streamlit/Web App)
-Use better embedding models
-Optimize performance
+Create a `.env` file.
 
-👩‍💻 Author
-Sai Sowjanya Edupuganti
+```env
+OPENAI_API_KEY=your_openai_api_key
+```
+
+---
+
+## Run the Application
+
+```bash
+python src/main.py
+```
+
+---
+
+# 📊 Performance Highlights
+
+- ✅ Reduced response latency through efficient FAISS indexing
+- ✅ Improved answer relevance using semantic retrieval
+- ✅ Reduced hallucinations with Retrieval-Augmented Generation
+- ✅ Context-aware response generation using OpenAI GPT models
+- ✅ Scalable retrieval pipeline for large document collections
+
+---
+
+# 🎯 Future Improvements
+
+- Streamlit Web Interface
+- FastAPI REST API
+- PDF Document Upload
+- Multi-file Knowledge Base
+- Hybrid Search (BM25 + Vector Search)
+- Conversation Memory
+- Docker Deployment
+- AWS Cloud Deployment
+- User Authentication
+- CI/CD using GitHub Actions
+
+---
+
+# 📚 Learning Outcomes
+
+This project demonstrates practical experience with:
+
+- Large Language Models
+- Retrieval-Augmented Generation
+- Semantic Search
+- Vector Databases
+- FAISS
+- Prompt Engineering
+- AI System Design
+- Information Retrieval
+- Backend Development
+- Python Software Engineering
+
+---
+
+# 👩‍💻 Author
+
+## Sai Sowjanya Edupuganti
+
+**Master of Science in Computer Science**
+
+University of North Texas
+
+📍 Denton, Texas, USA
+
+### Connect with me
+
+- GitHub: https://github.com/saisowjanyaedupuganti
+- LinkedIn: https://www.linkedin.com/in/sai-sowjanya-edupuganti
+
+---
+
+# ⭐ If you found this project useful
+
+Please consider giving this repository a ⭐ on GitHub.
+
+It motivates me to continue building AI-powered software projects and sharing them with the developer community.
+
+---
+
+## License
+
+This project is available for educational and research purposes.
