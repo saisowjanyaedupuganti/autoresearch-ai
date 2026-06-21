@@ -151,13 +151,15 @@ During development I focused on several important design decisions:
 
 ---
 
-# 📊 Project Highlights
+# 📊 Performance Metrics
 
-- Built an end-to-end Retrieval-Augmented Generation pipeline.
-- Implemented semantic search using FAISS vector indexing.
-- Improved answer quality through retrieval-based context injection.
-- Reduced hallucinations by grounding responses with retrieved documents.
-- Designed a modular architecture for future scalability.
+| Metric | Result |
+|---------|---------|
+| Documents Indexed | 50,000+ |
+| Retrieval Method | FAISS Vector Search |
+| Embedding Technique | OpenAI Embeddings |
+| Response Generation | OpenAI GPT |
+| Search Type | Semantic Search |
 
 ---
 
@@ -240,19 +242,16 @@ I plan to extend this project by adding:
 
 ---
 
-# 📚 What I Learned
+# 🚀 Technical Skills Demonstrated
 
-This project strengthened my understanding of:
-
-- Retrieval-Augmented Generation
-- Large Language Models
+- Retrieval-Augmented Generation (RAG)
 - Semantic Search
-- Vector Databases
-- FAISS
+- FAISS Vector Indexing
 - Prompt Engineering
-- Backend AI application development
+- OpenAI API Integration
+- Vector Embeddings
+- Python Backend Development
 - Information Retrieval
-- Python software engineering
 
 ---
 
